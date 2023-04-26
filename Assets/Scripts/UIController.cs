@@ -37,6 +37,10 @@ public class UIController : MonoBehaviour
     public Sprite normalTears;
 
     public clipboardController clipboard;
+    public notebookController notebook;
+
+    public emotionsController doorEmotions;
+    // SIX OF THESE; ONE FOR EACH PIECE OF EVIDENCE
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +58,10 @@ public class UIController : MonoBehaviour
         clipboardGift.sprite = shadowGift;
         tears.sprite = shadowTears;
         clipboardTears.sprite = shadowTears;
+
         clipboard.gameObject.SetActive(false);
+        notebook.gameObject.SetActive(false);
+        doorEmotions.enableToggles(false);
     }
 
     // Update is called once per frame
@@ -117,5 +124,15 @@ public class UIController : MonoBehaviour
     public void hideClipboard()
     {
         clipboard.gameObject.SetActive(false);
+    }
+
+    public void showNotebook()
+    {
+        notebook.gameObject.SetActive(true);
+    }
+
+    public void hideNotebook()
+    {
+        notebook.gameObject.SetActive(false);
     }
 }
