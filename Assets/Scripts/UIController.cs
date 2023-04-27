@@ -39,7 +39,12 @@ public class UIController : MonoBehaviour
     public clipboardController clipboard;
     public notebookController notebook;
 
+    public emotionsController vaseEmotions;
     public emotionsController doorEmotions;
+    public emotionsController cakeEmotions;
+    public emotionsController bannerEmotions;
+    public emotionsController giftEmotions;
+    public emotionsController tearsEmotions;
     // SIX OF THESE; ONE FOR EACH PIECE OF EVIDENCE
 
     // Start is called before the first frame update
@@ -61,7 +66,13 @@ public class UIController : MonoBehaviour
 
         clipboard.gameObject.SetActive(false);
         notebook.gameObject.SetActive(false);
+
+        vaseEmotions.enableToggles(false);
         doorEmotions.enableToggles(false);
+        cakeEmotions.enableToggles(false);
+        bannerEmotions.enableToggles(false);
+        giftEmotions.enableToggles(false);
+        tearsEmotions.enableToggles(false);
     }
 
     // Update is called once per frame
@@ -77,6 +88,7 @@ public class UIController : MonoBehaviour
             vase.sprite = normalVase;
             clipboardVase.sprite = normalVase;
             clipboard.currentPage = 1;
+            vaseEmotions.enableToggles(true);
         }
 
         if (evidenceName == "door")
@@ -84,6 +96,7 @@ public class UIController : MonoBehaviour
             door.sprite = normalDoor;
             clipboardDoor.sprite = normalDoor;
             clipboard.currentPage = 1;
+            doorEmotions.enableToggles(true);
         }
 
         if (evidenceName == "cake")
@@ -91,6 +104,7 @@ public class UIController : MonoBehaviour
             cake.sprite = normalCake;
             clipboardCake.sprite = normalCake;
             clipboard.currentPage = 2;
+            cakeEmotions.enableToggles(true);
         }
 
         if (evidenceName == "banner")
@@ -98,6 +112,7 @@ public class UIController : MonoBehaviour
             banner.sprite = normalBanner;
             clipboardBanner.sprite = normalBanner;
             clipboard.currentPage = 2;
+            bannerEmotions.enableToggles(true);
         }
 
         if (evidenceName == "gift")
@@ -105,6 +120,7 @@ public class UIController : MonoBehaviour
             gift.sprite = normalGift;
             clipboardGift.sprite = normalGift;
             clipboard.currentPage = 2;
+            giftEmotions.enableToggles(true);
         }
 
         if (evidenceName == "tears")
@@ -112,6 +128,7 @@ public class UIController : MonoBehaviour
             tears.sprite = normalTears;
             clipboardTears.sprite = normalTears;
             clipboard.currentPage = 1;
+            tearsEmotions.enableToggles(true);
         }
     }
 
@@ -135,4 +152,5 @@ public class UIController : MonoBehaviour
     {
         notebook.gameObject.SetActive(false);
     }
+    
 }

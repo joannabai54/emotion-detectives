@@ -28,7 +28,7 @@ public class detectiveController : MonoBehaviour
         {
             transform.Translate(direction * moveSpeed * Time.deltaTime);
 
-            if ((transform.position.x > 18f) || (transform.position.x < -5f))
+            if ((transform.position.x > 18f) || (transform.position.x < -5.03f))
             {
                 transform.Translate(-1 * direction * moveSpeed * Time.deltaTime);
             }

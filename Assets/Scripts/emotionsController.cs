@@ -23,7 +23,7 @@ public class emotionsController : MonoBehaviour
     {
         for (int i = 0; i < toggles.Length; i++)
         {
-            toggles[i].enabled = state;
+            toggles[i].interactable = state;
         }
     }
 }
