@@ -45,7 +45,8 @@ public class UIController : MonoBehaviour
     public emotionsController bannerEmotions;
     public emotionsController giftEmotions;
     public emotionsController tearsEmotions;
-    // SIX OF THESE; ONE FOR EACH PIECE OF EVIDENCE
+
+    public GameObject[] tooltips;
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +74,11 @@ public class UIController : MonoBehaviour
         bannerEmotions.enableToggles(false);
         giftEmotions.enableToggles(false);
         tearsEmotions.enableToggles(false);
+
+        for (int i = 0; i < tooltips.Length; i++)
+        {
+            tooltips[i].SetActive(true);
+        }
     }
 
     // Update is called once per frame
