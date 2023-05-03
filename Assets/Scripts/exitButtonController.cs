@@ -5,6 +5,8 @@ using UnityEngine;
 public class exitButtonController : MonoBehaviour
 {
     public GameObject evidenceInfo;
+    public toolTipController tip;
+    public int location;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,10 @@ public class exitButtonController : MonoBehaviour
     private void OnMouseUp()
     {
         evidenceInfo.SetActive(false);
+
+        tip.gameObject.SetActive(true);
+        tip.MoveImage(location);
+
         UIController.Instance.showClipboard();
     }
 }

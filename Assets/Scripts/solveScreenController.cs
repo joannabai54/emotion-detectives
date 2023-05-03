@@ -74,25 +74,26 @@ public class solveScreenController : MonoBehaviour
         Sprite scared = emotionOptions[3];
         Sprite surprised = emotionOptions[4];
 
-        Sprite[] solutionSet = { happy, sad, surprised };
+        List<Sprite> solutionSet = new List<Sprite>{ happy, sad, surprised };
         int checker = 0;
 
         // check for emotions
-        for (int i = 0; i < solutionSet.Length; i++)
+        if (solutionSet.Contains(emotionOne))
         {
-            if (emotionOne == solutionSet[i])
-            {
-                checker += 1;
-            }
-            if (emotionTwo == solutionSet[i])
-            {
-                checker += 1;
-            }
-            if (emotionThree == solutionSet[i])
-            {
-                checker += 1;
-            }
+            solutionSet.Remove(emotionOne);
+            checker += 1;
         }
+        if (solutionSet.Contains(emotionTwo))
+        {
+            solutionSet.Remove(emotionTwo);
+            checker += 1;
+        }
+        if (solutionSet.Contains(emotionThree))
+        {
+            solutionSet.Remove(emotionThree);
+            checker += 1;
+        }
+
 
         if (checker == 3)
         {
@@ -103,6 +104,7 @@ public class solveScreenController : MonoBehaviour
         else
         {
             friend.SetActive(true);
+
         }
     }
 }

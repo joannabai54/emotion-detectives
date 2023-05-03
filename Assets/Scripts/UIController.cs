@@ -155,6 +155,7 @@ public class UIController : MonoBehaviour
 
     public void showClipboard()
     {
+        clipboard.showCurrentPage();
         clipboard.gameObject.SetActive(true);
         clipboard.showCurrentPage();
 
