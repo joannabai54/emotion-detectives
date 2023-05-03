@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class sceneSwitcher : MonoBehaviour
 {
+    public static string previousScene;
+    private badgeBoardController badgeScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,4 +24,5 @@ public class sceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
 }

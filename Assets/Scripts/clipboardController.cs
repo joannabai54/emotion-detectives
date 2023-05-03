@@ -46,4 +46,10 @@ public class clipboardController : MonoBehaviour
             }
         }
     }
+
+    public void changeCurrentPage(int i)
+    {
+        currentPage = i;
+        showCurrentPage();
+    }
 }

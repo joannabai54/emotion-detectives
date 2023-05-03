@@ -49,6 +49,9 @@ public class UIController : MonoBehaviour
     public GameObject[] tooltips;
     public GameObject toolTipBlocker;
 
+    private int solveTipCount;
+    private int clipboardCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,19 +81,19 @@ public class UIController : MonoBehaviour
 
         toolTipBlocker.SetActive(true);
         tooltips[0].SetActive(true);
-        tooltips[1].SetActive(false);
-        tooltips[2].SetActive(false);
 
-        //for (int i = 0; i < tooltips.Length; i++)
-        //{
-        //    tooltips[i].SetActive(true);
-        //}
+        for (int i = 1; i < tooltips.Length; i++)
+        {
+            tooltips[i].SetActive(false);
+        }
+
+        solveTipCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 
     public void ShowEvidence(string evidenceName)
@@ -148,11 +151,26 @@ public class UIController : MonoBehaviour
     {
         clipboard.gameObject.SetActive(true);
         clipboard.showCurrentPage();
+
+        if (clipboardCount == 0)
+        {
+            // turn on notebook tool tip
+            tooltips[3].SetActive(true);
+        }
+        clipboardCount = 1;
     }
 
     public void hideClipboard()
     {
         clipboard.gameObject.SetActive(false);
+
+        if (solveTipCount == 0)
+        {
+            // set the solve tool tip active after the first time they open the notebook
+            tooltips[2].SetActive(true);
+            toolTipBlocker.SetActive(true);
+        }
+        solveTipCount = 1;
     }
 
     public void showNotebook()

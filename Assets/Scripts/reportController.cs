@@ -25,12 +25,18 @@ public class reportController : MonoBehaviour
         currentSpeech = 0;
         showCurrentSpeech();
 
+        for (int i = 1; i < speeches.Length; i++)
+        {
+            speeches[i].SetActive(false);
+        }
+
         clipboard.gameObject.SetActive(false);
         notebook.gameObject.SetActive(false);
         clipboardIcon.SetActive(false);
+        glowingDoor.gameObject.SetActive(false);
+
         notebookIcon.SetActive(false);
         notebookToolTip.SetActive(false);
-        glowingDoor.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,7 +64,7 @@ public class reportController : MonoBehaviour
                 speeches[i].SetActive(false);
             }
         }
-        if (currentSpeech == 4)
+        if (currentSpeech == speeches.Length - 1)
         {
             clipboardIcon.SetActive(true);
         }
@@ -76,10 +82,12 @@ public class reportController : MonoBehaviour
         {
             speeches[i].SetActive(false);
         }
-        notebookIcon.SetActive(true);
-        notebookToolTip.SetActive(true);
+        //notebookIcon.SetActive(true);
+        //notebookToolTip.SetActive(true);
+        
         friend.SetActive(false);
         detective.transform.position = new Vector3(-4f, -2.36f, 0f);
+        glowingDoor.gameObject.SetActive(true);
     }
 
     public void showNotebook()
@@ -91,7 +99,6 @@ public class reportController : MonoBehaviour
     {
         notebook.gameObject.SetActive(false);
         notebookToolTip.SetActive(false);
-        glowingDoor.gameObject.SetActive(true);
     }
 
     public void goInside()
