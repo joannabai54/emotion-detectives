@@ -103,6 +103,7 @@ public class UIController : MonoBehaviour
             vase.sprite = normalVase;
             clipboardVase.sprite = normalVase;
             clipboard.currentPage = 1;
+
             vaseEmotions.enableToggles(true);
         }
 
@@ -111,6 +112,7 @@ public class UIController : MonoBehaviour
             door.sprite = normalDoor;
             clipboardDoor.sprite = normalDoor;
             clipboard.currentPage = 1;
+
             doorEmotions.enableToggles(true);
         }
 
@@ -119,6 +121,7 @@ public class UIController : MonoBehaviour
             cake.sprite = normalCake;
             clipboardCake.sprite = normalCake;
             clipboard.currentPage = 2;
+
             cakeEmotions.enableToggles(true);
         }
 
@@ -127,6 +130,7 @@ public class UIController : MonoBehaviour
             banner.sprite = normalBanner;
             clipboardBanner.sprite = normalBanner;
             clipboard.currentPage = 2;
+
             bannerEmotions.enableToggles(true);
         }
 
@@ -135,6 +139,7 @@ public class UIController : MonoBehaviour
             gift.sprite = normalGift;
             clipboardGift.sprite = normalGift;
             clipboard.currentPage = 2;
+
             giftEmotions.enableToggles(true);
         }
 
@@ -143,6 +148,7 @@ public class UIController : MonoBehaviour
             tears.sprite = normalTears;
             clipboardTears.sprite = normalTears;
             clipboard.currentPage = 1;
+
             tearsEmotions.enableToggles(true);
         }
     }
@@ -164,13 +170,13 @@ public class UIController : MonoBehaviour
     {
         clipboard.gameObject.SetActive(false);
 
-        if (solveTipCount == 0)
+        if (solveTipCount == 2)
         {
-            // set the solve tool tip active after the first time they open the notebook
+            // set the solve tool tip active the third time they open the notebook
             tooltips[2].SetActive(true);
             toolTipBlocker.SetActive(true);
         }
-        solveTipCount = 1;
+        solveTipCount += 1;
     }
 
     public void showNotebook()
