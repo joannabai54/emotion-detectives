@@ -656,8 +656,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1251814384}
-        m_TargetAssemblyTypeName: soundController, Assembly-CSharp
+      - m_Target: {fileID: 1251814383}
+        m_TargetAssemblyTypeName: backgroundMusic, Assembly-CSharp
         m_MethodName: ToggleMute
         m_Mode: 1
         m_Arguments:
@@ -906,7 +906,6 @@ GameObject:
   - component: {fileID: 1251814382}
   - component: {fileID: 1251814381}
   - component: {fileID: 1251814383}
-  - component: {fileID: 1251814384}
   m_Layer: 0
   m_Name: background-music
   m_TagString: Untagged
@@ -924,7 +923,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c416a2165207546888ef38ee4ce7357a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1035,18 +1034,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d5bdf99e9f324ff0b688b0f6846f8c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1251814384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251814380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4ca7fc4571d44c9839b845a830fde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1404178925

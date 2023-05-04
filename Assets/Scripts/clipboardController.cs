@@ -10,8 +10,7 @@ public class clipboardController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentPage = 0;
-        showCurrentPage();
+
     }
 
     // Update is called once per frame

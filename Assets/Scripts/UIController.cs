@@ -70,6 +70,7 @@ public class UIController : MonoBehaviour
         clipboardTears.sprite = shadowTears;
 
         clipboard.gameObject.SetActive(false);
+        clipboard.changeCurrentPage(1);
         notebook.gameObject.SetActive(false);
 
         vaseEmotions.enableToggles(false);
@@ -102,7 +103,7 @@ public class UIController : MonoBehaviour
         {
             vase.sprite = normalVase;
             clipboardVase.sprite = normalVase;
-            clipboard.currentPage = 1;
+            clipboard.changeCurrentPage(1);
 
             vaseEmotions.enableToggles(true);
         }
@@ -111,7 +112,7 @@ public class UIController : MonoBehaviour
         {
             door.sprite = normalDoor;
             clipboardDoor.sprite = normalDoor;
-            clipboard.currentPage = 1;
+            clipboard.changeCurrentPage(1);
 
             doorEmotions.enableToggles(true);
         }
@@ -120,7 +121,7 @@ public class UIController : MonoBehaviour
         {
             cake.sprite = normalCake;
             clipboardCake.sprite = normalCake;
-            clipboard.currentPage = 2;
+            clipboard.changeCurrentPage(2);
 
             cakeEmotions.enableToggles(true);
         }
@@ -129,7 +130,7 @@ public class UIController : MonoBehaviour
         {
             banner.sprite = normalBanner;
             clipboardBanner.sprite = normalBanner;
-            clipboard.currentPage = 2;
+            clipboard.changeCurrentPage(2);
 
             bannerEmotions.enableToggles(true);
         }
@@ -138,7 +139,7 @@ public class UIController : MonoBehaviour
         {
             gift.sprite = normalGift;
             clipboardGift.sprite = normalGift;
-            clipboard.currentPage = 2;
+            clipboard.changeCurrentPage(2);
 
             giftEmotions.enableToggles(true);
         }
@@ -147,7 +148,7 @@ public class UIController : MonoBehaviour
         {
             tears.sprite = normalTears;
             clipboardTears.sprite = normalTears;
-            clipboard.currentPage = 1;
+            clipboard.changeCurrentPage(1);
 
             tearsEmotions.enableToggles(true);
         }
@@ -155,7 +156,6 @@ public class UIController : MonoBehaviour
 
     public void showClipboard()
     {
-        clipboard.showCurrentPage();
         clipboard.gameObject.SetActive(true);
         clipboard.showCurrentPage();
 

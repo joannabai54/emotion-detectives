@@ -5,6 +5,7 @@ using UnityEngine;
 public class backgroundMusic : MonoBehaviour
 {
     private static backgroundMusic instance = null;
+    bool isMuted = false;
 
     private void Awake()
     {
@@ -29,6 +30,12 @@ public class backgroundMusic : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ToggleMute()
+    {
+        isMuted = !isMuted;
+        GetComponent<AudioSource>().mute = isMuted;
     }
 
 }
